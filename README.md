@@ -1,3 +1,3 @@
 # Railway
-Railway project https://railway.uz/ru/ represents the backend part of this site. In the project, 
-tickets for train flights can be purchased and flights can be created.
+Railway project https://railway.uz/ru/ represents the backend part of this site.
+In the User part of the project, he can buy tickets for train flights, and in the Admin part he can create train flights.
