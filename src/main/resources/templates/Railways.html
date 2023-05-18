@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>railways</title>
+</head>
+
+<style>
+
+  body{
+    background-image: url("https://eticket.railway.uz/assets/my-images/bg.png");
+  }
+  .buy-table{
+    margin: 120px auto 0;
+    width: 80%;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+</style>
+
+<body>
+
+<table class="buy-table">
+  <thead style="border: none; background-color: white;">
+  <tr style="font-family: Segoe UI,sans-serif; font-weight: 400;
+      font-size: 16px;
+      line-height: 20px; border-radius: 10px;">
+    <th style="height: 40px">from</th>
+    <th>to</th>
+    <th>price</th>
+    <th>departure date</th>
+    <th>departure time</th>
+    <th>arrival time</th>
+    <th>railway name</th>
+    <th>carriage type</th>
+    <th>choose</th>
+  </tr>
+  </thead>
+  <tbody style=" border-radius: 10px;" th:each="railway : ${railways}">
+
+  <tr align="center" style="background-color: rgba(0,0,0,0.11); font-family: Segoe UI,sans-serif; font-weight: 400;
+      font-size: 24px;
+      line-height: 20px; border-radius: 10px;">
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.fromCity}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.toCity}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.price}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.departureDate}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.departureTime}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.arrivalTime}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.railwayName}"></td>
+    <td style="height: 40px; border-radius: 5px;" th:text="${railway.carriageType}"></td>
+    <td style="height: 40px; border-radius: 8px; background-color: #187cee"><a th:href="@{/choose/{id}(id=${railway.id})}" style="text-decoration: none; color: white;">choose</a></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

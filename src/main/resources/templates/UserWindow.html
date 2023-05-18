@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>railway</title>
+</head>
+
+<style>
+    body{
+        background-image: url("https://e-ticket.railway.uz/assets/img/summer.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .buy-div{
+        width: 90%;
+        height: 210px;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.55);
+        margin: 0 auto;
+        margin-top: 250px;
+        padding-top: 8px;
+        z-index: 9999;
+    }
+    .input{
+        padding: 8px 14px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #354356;
+        border: 1px solid #9ea7b8;
+        border-radius: 5px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .cities{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .button{
+        padding: 12px 20px 12px 12px;
+        background: linear-gradient(180deg,#fff,#dcebfd);
+        border: 4px solid #035096;
+        border-radius: 150px;
+        cursor: pointer;
+        font-family: Segoe UI, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        color: #035096;
+        margin-left: 15px;
+    }
+</style>
+
+<body>
+
+<div class="bg-div">
+
+</div>
+
+<div class="buy-div">
+    <h1 style="font-family: Segoe UI,sans-serif;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+opacity: 1;">To buy a ticket</h1>
+
+    <h4 style="font-family: Segoe UI,sans-serif;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #fff; margin-top: -20px; margin-bottom: 20px">Select route and date to buy a train ticket</h4>
+
+    <form th:action="@{/buyTicket}" method="post" style="margin: 0 auto;">
+        <div class="row" style="display: flex; flex-direction: row">
+            <input style="margin-left: 120px; width: 250px" class="input" type="text" name="fromCity" placeholder="from" list="from" required>
+            <datalist id="from">
+                <option>ANDIJAN</option>
+                <option>FERGANA</option>
+                <option>NAMANGAN</option>
+                <option>TASHKENT</option>
+                <option>SIRDARYA</option>
+                <option>JIZZAKH</option>
+                <option>SAMARKAND</option>
+                <option>KASHKADARYA</option>
+                <option>SURKHANDARYA</option>
+                <option>BUKHARA</option>
+                <option>NAVOI</option>
+                <option>KHOREZM</option>
+                <option>NUKUS</option>
+            </datalist>
+            <br><br>
+            <input style="margin-left: 50px; width: 250px" class="input" type="text" name="toCity" placeholder="to" list="to" required>
+            <datalist id="to">
+                <option>ANDIJAN</option>
+                <option>FERGANA</option>
+                <option>NAMANGAN</option>
+                <option>TASHKENT</option>
+                <option>SIRDARYA</option>
+                <option>JIZZAKH</option>
+                <option>SAMARKAND</option>
+                <option>KASHKADARYA</option>
+                <option>SURKHANDARYA</option>
+                <option>BUKHARA</option>
+                <option>NAVOI</option>
+                <option>KHOREZM</option>
+                <option>NUKUS</option>
+            </datalist>
+            <br><br>
+            <input style="margin-left: 50px; width: 250px" class="input" type="date" name="departureDate" placeholder="departure date" required>
+            <br><br>
+            <button style="margin-left: 50px; width: 150px; height: 40px; margin-top: 4px; border-radius: 5px; background-color: #187cee; color: white">Submit</button>
+
+        </div>
+    </form>
+    <div class="row" style="color: white; margin-left: 20px; text-align: center; display: flex; flex-direction: row">
+        <p class="cities">ANDIJAN</p>
+        <p class="cities">FERGANA</p>
+        <p class="cities">NAMANGAN</p>
+        <p class="cities">TASHKENT</p>
+        <p class="cities">SIRDARYA</p>
+        <p class="cities">JIZZAKH</p>
+        <p class="cities">SAMARKAND</p>
+        <p class="cities">KASHKADARYA</p>
+        <p class="cities">SURKHANDARYA</p>
+        <p class="cities">BUKHARA</p>
+        <p class="cities">NAVOI</p>
+        <p class="cities">KHOREZM</p>
+        <p class="cities">NUKUS</p>
+    </div>
+</div>
+
+
+<div class="row" style="margin: 0 auto; width: 430px; margin-top: 60px">
+
+    <button class="button">
+        Call-center: 1005
+    </button>
+
+    <button class="button">
+        @jd_answer_bot
+    </button>
+</div>
+
+<br>
+<p th:text="${message}" style="color: white; text-align: right">Test</p>
+</body>
+</html>

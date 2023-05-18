@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seats</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url("https://eticket.railway.uz/assets/my-images/bg.png");
+    }
+    .buy-table{
+        margin: 0 auto;
+        margin-top: 120px;
+        width: 80%;
+        border: none;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+</style>
+
+<body>
+
+<table class="buy-table">
+    <thead style="border: none; background-color: white;">
+    <tr style="font-family: Segoe UI,sans-serif; font-weight: 400;
+      font-size: 16px;
+      line-height: 20px; border-radius: 10px;">
+        <th style="height: 40px">seat number</th>
+        <th>created date</th>
+        <th>updated date</th>
+        <th>choose</th>
+    </tr>
+    </thead>
+    <tbody style=" border-radius: 10px;" th:each="seat : ${seats}">
+
+    <tr align="center" style="background-color: rgba(0,0,0,0.11); font-family: Segoe UI,sans-serif; font-weight: 400;
+      font-size: 24px;
+      line-height: 20px; border-radius: 10px;">
+        <td style="height: 40px; border-radius: 5px;" th:text="${seat.seatNumber}"></td>
+        <td style="height: 40px; border-radius: 5px;" th:text="${seat.created}"></td>
+        <td style="height: 40px; border-radius: 5px;" th:text="${seat.updated}"></td>
+        <td style="height: 40px; border-radius: 8px; background-color: #187cee"><a th:href="@{/reservation/{seatId}(seatId=${seat.id})}" style="text-decoration: none; color: white;">choose</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<p th:text="${message}" style="color: black; text-align: right">Test</p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+
+<style>
+    body{
+        background-image: url("https://eticket.railway.uz/assets/my-images/bg.png");
+        margin-top: 50px;
+    }
+    .form{
+        background-image: url("https://e-ticket.railway.uz/assets/img/summer.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.82);
+        width: 400px;
+        height: 650px;
+    }
+    .form-input{
+        width: 80%;
+        height: 40px;
+        border-radius: 5px;
+        margin-left: 35px;
+    }
+</style>
+
+<body>
+
+<!--/*@thymesVar id="railway" type="com.example.railway.domain.dto.request.RailwayRequest"*/-->
+<form class="form" style="margin: 0 auto; padding-top: 2px" th:action="@{/create}" th:object="${railway}" method="post">
+    <h5 style="color: white; text-align: center; font-size: 24px;">Create railway</h5>
+
+    <input style="margin-top: -10px" class="form-input" type="text" name="fromCity" placeholder="from" list="from" required>
+    <datalist id="from">
+        <option>ANDIJAN</option>
+        <option>FERGANA</option>
+        <option>NAMANGAN</option>
+        <option>TASHKENT</option>
+        <option>SIRDARYA</option>
+        <option>JIZZAKH</option>
+        <option>SAMARKAND</option>
+        <option>KASHKADARYA</option>
+        <option>SURKHANDARYA</option>
+        <option>BUKHARA</option>
+        <option>NAVOI</option>
+        <option>KHOREZM</option>
+        <option>NUKUS</option>
+    </datalist>
+    <br><br>
+    <input class="form-input" type="text" name="toCity" placeholder="to" list="to" required>
+    <datalist id="to">
+        <option>ANDIJAN</option>
+        <option>FERGANA</option>
+        <option>NAMANGAN</option>
+        <option>TASHKENT</option>
+        <option>SIRDARYA</option>
+        <option>JIZZAKH</option>
+        <option>SAMARKAND</option>
+        <option>KASHKADARYA</option>
+        <option>SURKHANDARYA</option>
+        <option>BUKHARA</option>
+        <option>NAVOI</option>
+        <option>KHOREZM</option>
+        <option>NUKUS</option>
+    </datalist>
+    <br><br>
+    <input class="form-input" type="text" name="railwayName" placeholder="train name" required>
+    <br><br>
+    <input class="form-input" type="date" name="departureDate" placeholder="departure date" required>
+    <br><br>
+    <input class="form-input" type="time" name="departureTime" placeholder="departure time" required>
+    <br><br>
+    <input class="form-input" type="time" name="arrivalTime" placeholder="arrival time" required>
+    <br><br>
+    <input class="form-input" type="text" name="carriageType" placeholder="carriage type" list="types" required>
+    <datalist id="types">
+        <option>PLASKARD</option>
+        <option>KUPE</option>
+        <option>VIP</option>
+    </datalist>
+    <br><br>
+    <input class="form-input" type="number" name="price" placeholder="price" required min="1" max="200">
+    <br><br>
+    <button style="margin-left: 115px; width: 150px; height: 30px; margin-top: 4px; border-radius: 5px; background-color: #187cee; color: white">Submit</button>
+</form>
+
+</body>
+</html>
